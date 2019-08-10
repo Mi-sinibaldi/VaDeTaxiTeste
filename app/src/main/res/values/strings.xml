@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">VaDeTaxiTeste</string>
+    <string name="pesquise_por_cidade">Pesquise por cidade</string>
+    <string name="procurar">Procurar</string>
+    <string name="procure_por_cidade">Procure por cidade</string>
+</resources>
