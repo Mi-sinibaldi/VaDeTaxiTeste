@@ -7,43 +7,58 @@
     android:layout_height="match_parent"
     tools:context=".fragment.TempoFragment">
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="331dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
     <TextView
         android:id="@+id/textViewTempMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="21°"
+        android:text="hahahahhaaa"
+        android:textColor="@color/colorTextBtn"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toStartOf="@+id/textViewTempMax"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/textViewMax"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/textViewMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Min."
+        android:layout_marginBottom="4dp"
+        android:text="@string/min"
+        android:textColor="@color/colorTextBtn"
         app:layout_constraintBottom_toTopOf="@+id/textViewTempMin"
         app:layout_constraintEnd_toStartOf="@+id/textViewMax"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <TextView
-        android:id="@+id/textViewCidade"
+        android:id="@+id/textViewCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Cidade"
+        android:text="@string/cidade"
+        android:textColor="@color/colorTextBtn"
         android:textSize="50sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -55,7 +70,7 @@
         android:id="@+id/imageView"
         android:layout_width="110dp"
         android:layout_height="88dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/textViewTemp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -66,21 +81,20 @@
         android:id="@+id/textViewMax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="8dp"
-        android:text="Max"
+        android:layout_marginBottom="4dp"
+        android:text="@string/max"
+        android:textColor="@color/colorTextBtn"
         app:layout_constraintBottom_toTopOf="@+id/textViewTempMax"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/textViewTempMax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="52dp"
-        android:text="29°"
+        android:layout_marginBottom="44dp"
+        android:textColor="@color/colorTextBtn"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/textViewTemp"
@@ -88,6 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:text="28° C"
+        android:textColor="@color/colorTextBtn"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewClima"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,17 +113,19 @@
         android:id="@+id/textViewClima"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:text="Ensolarado"
+        android:textColor="@color/colorTextBtn"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="416dp"
-        android:layout_height="224dp"
+        android:layout_width="413dp"
+        android:layout_height="190dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
@@ -133,7 +150,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="Humidade"
+            android:text="@string/humidade"
+            android:textColor="@color/colorTextBtn"
             app:layout_constraintBottom_toTopOf="@+id/textViewNascerSol"
             app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
@@ -142,7 +160,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="Nascer do Sol"
+            android:text="@string/nascer_do_sol"
+            android:textColor="@color/colorTextBtn"
             app:layout_constraintBottom_toTopOf="@+id/textViewPorSol"
             app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
@@ -152,18 +171,19 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="68dp"
-            android:text="Pôr do Sol"
+            android:text="@string/p_r_do_sol"
+            android:textColor="@color/colorTextBtn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textViewHoraPorSol"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
         <TextView
-            android:id="@+id/textViewHumidadePorcentagem"
+            android:id="@+id/textViewPorcent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="20%"
+            android:textColor="@color/colorTextBtn"
             app:layout_constraintBottom_toTopOf="@+id/textViewHoraNascer"
             app:layout_constraintEnd_toStartOf="@+id/guideline4" />
 
@@ -172,7 +192,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="6:30"
+            android:textColor="@color/colorTextBtn"
             app:layout_constraintBottom_toTopOf="@+id/textViewHoraPorSol"
             app:layout_constraintEnd_toStartOf="@+id/guideline4" />
 
@@ -181,7 +201,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="68dp"
-            android:text="19:10"
+            android:textColor="@color/colorTextBtn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline4" />
     </android.support.constraint.ConstraintLayout>

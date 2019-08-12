@@ -1,9 +1,16 @@
 <resources>
-    <string name="app_name">VaDeTaxiTeste</string>
+    <string name="app_name">TempoClima</string>
     <string name="pesquise_por_cidade">Pesquise por cidade</string>
     <string name="procurar">Procurar</string>
     <string name="procure_por_cidade">Procure por cidade</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ok">Ok</string>
+    <string name="cidade">Cidade</string>
+    <string name="min">Min.</string>
+    <string name="max">Max</string>
+    <string name="humidade">Humidade</string>
+    <string name="nascer_do_sol">Nascer do Sol</string>
+    <string name="p_r_do_sol">Pôr do Sol</string>
 </resources>
