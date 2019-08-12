@@ -3,6 +3,8 @@ package com.example.vadetaxiteste;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import com.example.vadetaxiteste.Data.Remote.Contract.IWeatherEndPoint;
 import com.example.vadetaxiteste.Data.Remote.ServiceGenerator;
 import com.example.vadetaxiteste.Model.WeatherResponse;
+import com.example.vadetaxiteste.fragment.TempoFragment;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonProcurar;
     private EditText editTextProcure;
+    private String AppId = "18255c9fb107f943bad5ae65743d3aea";
+    private String Unit = "metric";
+    private String Lang = "pt";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 if (editTextProcure == null || editTextProcure.getText().length() > 3) {
                     if (haveConection()) {
                         getWeather(editTextProcure.getText().toString());
+                    }else{
+                        //COLOCAR MESANGEM DE SEM INTERNET - Dialog
                     }
 
                 }
@@ -56,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         IWeatherEndPoint iWeatherEndPoint = ServiceGenerator.createService(IWeatherEndPoint.class);
 
-        Call<WeatherResponse> call = iWeatherEndPoint.getWeather();
+        Call<WeatherResponse> call = iWeatherEndPoint.getWeather(state,AppId,Unit,Lang);
 
         call.enqueue(new Callback<WeatherResponse>() {
 
@@ -64,7 +73,20 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<WeatherResponse> call, Response<WeatherResponse> response) {
 
                 if(response.code() == 200){
-                    Toast.makeText(MainActivity.this, "Deu certo",Toast.LENGTH_SHORT).show();
+
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("response", response.body());
+
+                    TempoFragment fragment = new TempoFragment();
+                    fragment.setArguments(bundle);
+
+                    // Pega o FragmentManager
+                    FragmentManager fm = getSupportFragmentManager();
+
+                    // Substitui um Fragment
+                    FragmentTransaction ft = fm.beginTransaction();
+                    ft.replace(R.id.fragment_content, fragment);
+                    ft.commit();
 
                 }else{
                     Toast.makeText(MainActivity.this, "Não encontrado",Toast.LENGTH_SHORT).show();

@@ -1,6 +1,8 @@
 package com.example.vadetaxiteste.Model;
 
-public class WweatherWeather {
+import java.io.Serializable;
+
+public class WeatherWeather implements Serializable {
 
     private int id;
     private String main;

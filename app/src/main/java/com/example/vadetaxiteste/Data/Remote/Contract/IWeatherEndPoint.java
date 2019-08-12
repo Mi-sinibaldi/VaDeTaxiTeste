@@ -5,9 +5,9 @@ import com.example.vadetaxiteste.Model.WeatherResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface IWeatherEndPoint {
-
-    @GET("weather?q=Hurzuf&appid=18255c9fb107f943bad5ae65743d3aea&units=metric")
-    Call<WeatherResponse> getWeather();
+    @GET("weather")
+    Call<WeatherResponse> getWeather(@Query("q") String state, @Query("appid") String AppId, @Query("units") String units, @Query("lang") String lang);
 }

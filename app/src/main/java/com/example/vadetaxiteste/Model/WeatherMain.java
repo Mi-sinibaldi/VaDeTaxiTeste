@@ -1,6 +1,8 @@
 package com.example.vadetaxiteste.Model;
 
-public class WweatherMain {
+import java.io.Serializable;
+
+public class WeatherMain implements Serializable {
 
     private float temp;
     private float pressure;

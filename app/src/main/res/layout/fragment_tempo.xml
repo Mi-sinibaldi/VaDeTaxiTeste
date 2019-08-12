@@ -8,7 +8,7 @@
     tools:context=".fragment.TempoFragment">
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/textViewTempMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -17,27 +17,27 @@
         android:layout_marginBottom="8dp"
         android:text="21°"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTempMax"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMax"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Min."
-        app:layout_constraintBottom_toTopOf="@+id/textView20"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTempMin"
+        app:layout_constraintEnd_toStartOf="@+id/textViewMax"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewCidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -56,24 +56,24 @@
         android:layout_width="110dp"
         android:layout_height="88dp"
         android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTemp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         tools:src="@tools:sample/avatars[2]" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewMax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="8dp"
         android:text="Max"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTempMax"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textViewTempMax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
@@ -83,19 +83,19 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:text="28° C"
         android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintBottom_toTopOf="@+id/textViewClima"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewClima"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -129,55 +129,55 @@
             app:layout_constraintGuide_percent="0.8" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textViewHumidade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="Humidade"
-            app:layout_constraintBottom_toTopOf="@+id/textView15"
+            app:layout_constraintBottom_toTopOf="@+id/textViewNascerSol"
             app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/textViewNascerSol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="Nascer do Sol"
-            app:layout_constraintBottom_toTopOf="@+id/textView16"
+            app:layout_constraintBottom_toTopOf="@+id/textViewPorSol"
             app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/textViewPorSol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="68dp"
             android:text="Pôr do Sol"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView19"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHoraPorSol"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/textViewHumidadePorcentagem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="20%"
-            app:layout_constraintBottom_toTopOf="@+id/textView18"
+            app:layout_constraintBottom_toTopOf="@+id/textViewHoraNascer"
             app:layout_constraintEnd_toStartOf="@+id/guideline4" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/textViewHoraNascer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="6:30"
-            app:layout_constraintBottom_toTopOf="@+id/textView19"
+            app:layout_constraintBottom_toTopOf="@+id/textViewHoraPorSol"
             app:layout_constraintEnd_toStartOf="@+id/guideline4" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/textViewHoraPorSol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="68dp"
