@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (editTextSearch == null || editTextSearch.getText().length() > 3) {
-                    editTextSearch.setError("O campo não pode estar vazio e deve ser maior que 3 caracteres!");
                     showProgress(true);
                     if (haveConection()) {
                         getWeather(editTextSearch.getText().toString());
@@ -100,9 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     showProgress(false);
                     showDialogAlertNotFound();
-
                 }
-
             }
 
             @Override
@@ -143,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = dialog.findViewById(R.id.textViewCheck);
 
         textView.setText("Não foi possível conectar a internet!");
-        textView.getGravity();
         textView.setTextColor(getResources().getColor(R.color.colorText));
         dialog.setCancelable(false);
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.
@@ -166,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = dialog.findViewById(R.id.textViewCheck);
 
         textView.setText("Erro. Tente novamente!");
-        textView.getGravity();
         textView.setTextColor(getResources().getColor(R.color.colorText));
         dialog.setCancelable(false);
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.
